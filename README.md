@@ -19,7 +19,7 @@ Informed by [Apache: Enable HTTPS Locally](http://www.dinduks.com/apache-enable-
 - httpd.conf in sublime
 - search for 'ssl'
 - uncommented `LoadModule ssl_module libexec/apache2/mod_ssl.so`
-- need sudo to save (figure out that issue)
+
 
 
 
@@ -30,14 +30,14 @@ Informed by [Apache: Enable HTTPS Locally](http://www.dinduks.com/apache-enable-
 - httpd.conf in sublime
 - search for 'Listen'
 - added a line `Listen 443'
-- need sudo to save (figure out that issue)
+
 
 
 
 ## Create an SSL certificate
-Trying open ssl to generate my own certificate.
+Using Openssl to generate my own self signed certificate.
 
-- tested `make-ssl-cert`, nothing
+- tested `make-ssl-cert` (from above article), not on my system
 - went to [openssl](https://github.com/openssl/openssl/blob/master/INSTALL) github
 - tested dependencies
   - `which make`
@@ -69,8 +69,8 @@ If you want to just get on with it, do:
 Check out the CA.pl(1) manual page. This provides a simple wrapper round the 'req', 'verify', 'ca' and 'pkcs12' utilities. For finer control check out the manual pages for the individual utilities and the certificate extensions documentation (in ca(1), req(1), x509v3_config(5) )
 ```
 
-- searched ''
 - ` openssl req -x509 -newkey rsa:2048 -nodes -keyout key.pem -out cert.pem -days 365`
+[^via](http://stackoverflow.com/questions/10175812/how-to-create-a-self-signed-certificate-with-openssl)
 
 ```
 Country Name (2 letter code) [AU]:CA
@@ -79,7 +79,7 @@ Locality Name (eg, city) []:Nanaimo
 Organization Name (eg, company) [Internet Widgits Pty Ltd]:Oakenfold Enterprises Ltd.
 Organizational Unit Name (eg, section) []:Web Development
 Common Name (e.g. server FQDN or YOUR name) []:Chad Oakenfold
-Email Address []:web@oakenfold.ca
+Email Address []:REDACTED@REDACT.ED
 ```
 
 ```
