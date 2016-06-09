@@ -60,17 +60,8 @@ If you want to just get on with it, do:
 ``` 
 
 - Had to `sudo make install` due to copy permission
-
-[openssl faqs](https://www.openssl.org/docs/faq.html#USER3)
-
-```
-3. How do I create certificates or certificate requests?  
-
-Check out the CA.pl(1) manual page. This provides a simple wrapper round the 'req', 'verify', 'ca' and 'pkcs12' utilities. For finer control check out the manual pages for the individual utilities and the certificate extensions documentation (in ca(1), req(1), x509v3_config(5) )
-```
-
 - ` openssl req -x509 -newkey rsa:2048 -nodes -keyout key.pem -out cert.pem -days 365`
-[^via](http://stackoverflow.com/questions/10175812/how-to-create-a-self-signed-certificate-with-openssl)
+[- @stackoverflow](http://stackoverflow.com/questions/10175812/how-to-create-a-self-signed-certificate-with-openssl)
 
 ```
 Country Name (2 letter code) [AU]:CA
@@ -122,4 +113,10 @@ total 16
 
 - `start_apache`
 - [https://pwa.localhost](https://pwa.localhost/)
-- accept invalid certificate
+- Using Firefox, accept invalid certificate
+- ![SSL Warning](media/01.png "SSL Warning")
+- ![SSL Accept 1](media/02.png "SSL Accept 1")
+- ![SSL Accept 2](media/03.png "SSL Accept 2")
+- ![Local HTTPS Site](media/04.png "Local HTTPS Site")
+- ![SSL Accepted](media/05.png "SSL Accepted")
+- ![SSL Accepted](media/06.png "SSL Accepted")
